@@ -48,8 +48,8 @@
 
     <!-- Recent Activity -->
     <RecentActivity 
-      :quotes="salesStore.recentQuotes.value" 
-      :orders="salesStore.recentOrders.value" 
+      :quotes="salesStore.recentQuotes" 
+      :orders="salesStore.recentOrders" 
     />
   </div>
 </template>

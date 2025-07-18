@@ -1,6 +1,6 @@
 <template>
   <div class="p-6 space-y-6">
-    <div v-if="client">
+    <div v-if="client" class="space-y-6">
       <!-- Header with client info -->
       <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <div class="flex items-center justify-between">
