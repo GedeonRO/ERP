@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 </script>
@@ -81,5 +81,45 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+</style>
+ -->
+
+<template>
+  <router-view />
+</template>
+
+<script setup lang="ts">
+// App.vue - Root component
+</script>
+
+<style>
+@import 'tailwindcss/preflight';
+@tailwind utilities;
+
+@reference "tailwindcss";
+
+/* Custom styles */
+.sidebar-enter-active,
+.sidebar-leave-active {
+  transition: transform 0.3s ease;
+}
+.sidebar-enter-from,
+.sidebar-leave-to {
+  transform: translateX(-100%);
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply flex items-center space-x-3 px-3 py-2 text-sm font-medium text-gray-600 rounded-lg hover:bg-gray-100 hover:text-gray-900 transition-colors;
+}
+.nav-link-active {
+  @apply  text-white hover:text-white;
+}
+.nav-section {
+  @apply mt-6;
+}
+.nav-section-title {
+  @apply block px-3 py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider;
 }
 </style>
