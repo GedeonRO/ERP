@@ -29,11 +29,6 @@ const router = createRouter({
           component: () => import('@/views/sales/ClientsView.vue'),
         },
         {
-          path: '/clients',
-          name: 'clients',
-          component: () => import('@/views/sales/ClientsView.vue'),
-        },
-        {
           path: '/clients/:id',
           name: 'client-detail',
           component: () => import('@/views/sales/ClientDetailView.vue'),
@@ -44,14 +39,29 @@ const router = createRouter({
           component: () => import('@/views/sales/QuotesView.vue'),
         },
         {
+          path: '/quotes/:id',
+          name: 'quote-detail',
+          component: () => import('@/views/sales/QuoteDetailView.vue'),
+        },
+        {
           path: '/orders',
           name: 'orders',
           component: () => import('@/views/sales/OrdersView.vue'),
         },
         {
+          path: '/orders/:id',
+          name: 'order-detail',
+          component: () => import('@/views/sales/OrderDetailView.vue'),
+        },
+        {
           path: '/invoices',
           name: 'invoices',
           component: () => import('@/views/sales/InvoicesView.vue'),
+        },
+        {
+          path: '/invoices/:id',
+          name: 'invoice-detail',
+          component: () => import('@/views/sales/InvoiceDetailView.vue'),
         },
         {
           path: '/suppliers',
@@ -62,7 +72,7 @@ const router = createRouter({
     },
   ],
 })
-/* 
+
 // Navigation guard for authentication
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore()
@@ -74,6 +84,6 @@ router.beforeEach((to, from, next) => {
   } else {
     next()
   }
-}) */
+})
 
 export default router

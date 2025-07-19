@@ -47,7 +47,7 @@
     </div>
 
     <!-- Invoice Form Modal -->
-    <div v-if="showForm" class="fixed inset-0 bg-[#00000041]  flex items-center justify-center z-50 p-4">
+    <div v-if="showForm" class="fixed inset-0 bg-[#00000067] flex items-center justify-center z-50 p-4">
       <div class="bg-white rounded-lg max-w-4xl w-full max-h-full overflow-y-auto">
         <InvoiceForm
           :invoice="editingInvoice"
@@ -298,6 +298,7 @@ import MetricCard from '@/components/shared/MetricCard.vue'
 import InvoiceForm from '@/components/sales/InvoiceForm.vue'
 import { useSalesStore } from '@/stores/sales'
 import type { Invoice, InvoiceFormData } from '@/types'
+import router from '@/router'
 
 const salesStore = useSalesStore()
 
@@ -364,8 +365,7 @@ const editInvoice = (invoice: Invoice) => {
 }
 
 const viewInvoice = (invoice: Invoice) => {
-  // Navigate to invoice detail view (to be implemented)
-  console.log('View invoice:', invoice.id)
+  router.push(`/invoices/${invoice.id}`)
 }
 
 const downloadPDF = (invoice: Invoice) => {

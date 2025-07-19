@@ -54,7 +54,7 @@
     <!-- Quote Form Modal -->
     <div
       v-if="showForm"
-      class="fixed inset-0 bg-[#00000063] bg-opacity-50 flex items-center justify-center z-50 p-4"
+      class="fixed inset-0 bg-[#00000065]  flex items-center justify-center z-50 p-4"
     >
       <div class="bg-white rounded-lg max-w-4xl w-full max-h-full overflow-y-auto">
         <QuoteForm
@@ -364,8 +364,7 @@ const editQuote = (quote: Quote) => {
 }
 
 const viewQuote = (quote: Quote) => {
-  // Navigate to quote detail view (to be implemented)
-  console.log('View quote:', quote.id)
+  router.push(`/quotes/${quote.id}`)
 }
 
 const convertToOrder = (quote: Quote) => {
@@ -430,4 +429,3 @@ const formatCurrency = (amount: number): string => {
   }).format(amount)
 }
 </script>
-

@@ -54,7 +54,7 @@
     <!-- Order Form Modal -->
     <div
       v-if="showForm"
-      class="fixed inset-0 bg-[#00000069]  flex items-center justify-center z-50 p-4"
+      class="fixed inset-0 bg-[#0000006e] flex items-center justify-center z-50 p-4"
     >
       <div class="bg-white rounded-lg max-w-4xl w-full max-h-full overflow-y-auto">
         <OrderForm
@@ -355,9 +355,8 @@ const filteredOrders = computed(() => {
 })
 
 const ordersInProgress = computed(() => {
-  return salesStore.orders.value.filter(
-    (o) => o.status === 'en_cours' || o.status === 'en_preparation',
-  ).length
+  return salesStore.orders.value.filter((o) => o.status === 'en_cours' || o.status === 'en_preparation')
+    .length
 })
 
 const deliveredOrders = computed(() => {
@@ -389,8 +388,7 @@ const editOrder = (order: Order) => {
 }
 
 const viewOrder = (order: Order) => {
-  // Navigate to order detail view (to be implemented)
-  console.log('View order:', order.id)
+  router.push(`/orders/${order.id}`)
 }
 
 const markAsDelivered = (orderId: string) => {
